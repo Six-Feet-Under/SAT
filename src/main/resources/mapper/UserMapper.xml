@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.nainai.model">
+<mapper namespace="com.heneng.demo.dao.UserMapper">
     <resultMap id="BaseResultMap" type="com.heneng.demo.model.User">
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="uid" property="uid" jdbcType="VARCHAR"/>
@@ -15,10 +15,14 @@
         id,uid,userName,account,passWord,uPwdB
     </sql>
 
-    <select id="login" resultMap="com.heneng.demo.model" parameterType="java.lang.String">
+    <select id="login" resultMap="com.heneng.demo.model.User" parameterType="java.lang.String">
         select *
         from user
         where account=#{account} and passWord=#{passWord}
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap" >
+        select *from user
     </select>
 
 </mapper>

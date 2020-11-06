@@ -6,8 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+
+/**
+ * @author cnai
+ */
 @SpringBootApplication
-@EnableTransactionManagement    //开启事务注解
+@EnableTransactionManagement
 @MapperScan("com.heneng.demo.dao")
 @EnableScheduling
 public class SatApplication {
