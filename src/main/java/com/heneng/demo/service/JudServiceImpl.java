@@ -20,22 +20,22 @@ public class JudServiceImpl implements JudService{
     }
 
     @Override
-    public void deleteById(int id) {
-        judMapper.deleteById(id);
+    public void deleteByUid(String id) {
+        judMapper.deleteByUid(id);
     }
 
     @Override
-    public List<Jud> selectAll(Map map) {
-        return judMapper.selectAll(map);
+    public List<Jud> selectAll() {
+        return judMapper.selectAll();
     }
 
     @Override
-    public Jud selectJudById(int id) {
+    public Jud selectJudByUid(String id) {
         return judMapper.selectJudById(id);
     }
 
     @Override
-    public void updateJudById(int id) {
-        judMapper.updateJudById(id);
+    public void updateJudByUid(String id) {
+        judMapper.updateJudByUid(id);
     }
 }

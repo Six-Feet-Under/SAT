@@ -2,7 +2,9 @@ package com.heneng.demo.service;
 
 import com.heneng.demo.dao.RoleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RoleServiceImpl implements RoleService{
 
     @Autowired

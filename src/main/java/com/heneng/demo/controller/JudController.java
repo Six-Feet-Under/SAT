@@ -32,18 +32,27 @@ public class JudController {
                     dataType = "string", paramType = "Jud")
     })
     public String  insertJud(Jud jud) {
-        judService.insertJud(jud);
+        if(selectJudByUid(jud.getUser_id())!=null){
+            return"用户已存在";
+        }else {
+            judService.insertJud(jud);
+        }
+
         return "success";
     }
 
     @ApiOperation(value="删除权限信息接口", notes="删除权限信息")
-    @RequestMapping(value = "/jud/deleteById", method = RequestMethod.POST)
+    @RequestMapping(value = "/jud/deleteByUid", method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
-                    dataType = "string", paramType = "int")
+                    dataType = "string", paramType = "String")
     })
-    public String deleteById(int id) {
-        judService.deleteById(id);
+    public String deleteByUid(String  uid) {
+        if(selectJudByUid(uid)!=null){
+            judService.deleteByUid(uid);
+        }else {
+            return"用户不存在";
+        }
         return "success";
     }
 
@@ -53,30 +62,33 @@ public class JudController {
             @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
                     dataType = "List", paramType = "Map")
     })
-    public List<Jud> selectAll(Map map) {
+    public List<Jud> selectAll() {
 
-        return judService.selectAll(map);
+        return judService.selectAll();
     }
 
     @ApiOperation(value="查询权限信息接口", notes="查询权限信息")
-    @RequestMapping(value = "/jud/selectJudById", method = RequestMethod.POST)
+    @RequestMapping(value = "/jud/selectJudByUid", method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
-                    dataType = "Jud", paramType = "int")
+                    dataType = "Jud", paramType = "String")
     })
-    public Jud selectJudById(int id) {
+    public Jud selectJudByUid(String id) {
 
-        return judService.selectJudById(id);
+        return judService.selectJudByUid(id);
     }
 
     @ApiOperation(value="查询权限信息接口", notes="查询权限信息")
-    @RequestMapping(value = "/jud/updateJudById", method = RequestMethod.POST)
+    @RequestMapping(value = "/jud/updateJudByUid", method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
-                    dataType = "String", paramType = "int")
+                    dataType = "String", paramType = "String")
     })
-    public String updateJudById(int id) {
-        judService.updateJudById(id);
+    public String updateJudByUid(String uid) {
+        if(selectJudByUid(uid)!=null){
+            judService.updateJudByUid(uid);
+        }
+
         return "success";
     }
 }
