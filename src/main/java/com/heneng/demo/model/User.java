@@ -12,7 +12,7 @@ public class User {
 
     private String passWord; //密码
 
-    private String uPudB; //加密后密码（B钥）
+    private String upwdb; //加密后密码（B钥）
 
     public long getId() {
         return id;
@@ -54,20 +54,20 @@ public class User {
         this.passWord = uPwd;
     }
 
-    public String getuPudB() {
-        return uPudB;
+    public String getUpwdb() {
+        return upwdb;
     }
 
-    public void setuPudB(String uPudB) {
-        this.uPudB = uPudB;
+    public void setUpwdb(String uPudB) {
+        this.upwdb = uPudB;
     }
 
-    public User(long id, String uid, String userName, String account, String passWord, String uPudB) {
+    public User(long id, String uid, String userName, String account, String passWord, String upwdb) {
         this.id = id;
         this.uid = uid;
         this.userName = userName;
         this.account = account;
         this.passWord = passWord;
-        this.uPudB = uPudB;
+        this.upwdb = upwdb;
     }
 }

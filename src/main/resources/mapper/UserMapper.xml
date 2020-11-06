@@ -22,7 +22,48 @@
     </select>
 
     <select id="selectAll" resultMap="BaseResultMap" >
-        select *from user
+        select * from user
     </select>
 
+    <select id="selectUserById" resultType="com.heneng.demo.model.User" parameterType="java.lang.Long">
+        select * from user where id = #{id}
+    </select>
+
+    <insert id="insertUser" parameterType="com.heneng.demo.model.User">
+        insert
+        into user (id,uid,username,account,passWord,upwdb)
+        values (#{id},#{uid},#{userName},#{account},#{passWord},#{upwdb})
+    </insert>
+
+    <delete id="deleteUserById"  parameterType="java.lang.Long">
+        delete
+        from user
+        where id = #{id}
+    </delete>
+
+    <update id="updateUser" parameterType="java.lang.Integer" >
+        update user
+        set
+
+        <if test="uid != null">
+            uid = #{uid}
+        </if>
+
+        <if test="userName != null">
+            ,username = #{userName}
+        </if>
+
+        <if test="account != null">
+            ,account = #{account}
+        </if>
+
+        <if test="passWord != null">
+        ,passWord = #{passWord}
+        </if>
+
+        <if test="upwdb != null">
+            ,upwdb = #{upwdb}
+        </if>
+        where id = #{id}
+    </update>
 </mapper>
