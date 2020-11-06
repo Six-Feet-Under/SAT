@@ -1,7 +1,7 @@
 package com.heneng.demo.model;
 
 public class User {
-    
+
     private long id; //自增主键 id
 
     private String uid; //id
@@ -13,7 +13,6 @@ public class User {
     private String passWord; //密码
 
     private String uPudB; //加密后密码（B钥）
-
 
     public long getId() {
         return id;
