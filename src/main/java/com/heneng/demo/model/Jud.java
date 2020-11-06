@@ -2,9 +2,9 @@ package com.heneng.demo.model;
 
 public class Jud {
 
-    private int id;
-    private int user_id;
-    private int jud_id;
+    private int id;  //自增主键
+    private int user_id;  //用户的uid
+    private int jud_id;  //权限的id
 
     public int getId() {
         return id;

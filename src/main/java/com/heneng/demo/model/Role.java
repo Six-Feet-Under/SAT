@@ -1,11 +1,11 @@
 package com.heneng.demo.model;
 
 public class Role {
-    private int id;
-    private int user_id;
-    private int role_id;
+    private int id;  //自增主键id
+    private String user_id;  //用户的uid
+    private int role_id;  //角色的id
 
-    public Role(int user_id, int role_id) {
+    public Role(String user_id, int role_id) {
         this.user_id = user_id;
         this.role_id = role_id;
     }
@@ -18,11 +18,11 @@ public class Role {
         this.id = id;
     }
 
-    public int getUser_id() {
+    public String getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(String user_id) {
         this.user_id = user_id;
     }
 
@@ -36,9 +36,9 @@ public class Role {
 
     @Override
     public String toString() {
-        return "role{" +
+        return "Role{" +
                 "id=" + id +
-                ", user_id=" + user_id +
+                ", user_id='" + user_id + '\'' +
                 ", role_id=" + role_id +
                 '}';
     }

@@ -14,13 +14,13 @@ public class JudServiceImpl implements JudService{
     private JudMapper judMapper;
 
     @Override
-    public void insertJud(Jud jud) {
-        judMapper.insertJud(jud);
+    public int insertJud(String user_id,Integer jud_id) {
+         return judMapper.insertJud(user_id,jud_id);
     }
 
     @Override
-    public void deleteByUid(String id) {
-        judMapper.deleteByUid(id);
+    public int deleteByUid(String id) {
+        return judMapper.deleteByUid(id);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class JudServiceImpl implements JudService{
     }
 
     @Override
-    public void updateJudByUid(String id) {
-        judMapper.updateJudByUid(id);
+    public int updateJud(Jud jud) {
+        return judMapper.updateJud(jud);
     }
 }
