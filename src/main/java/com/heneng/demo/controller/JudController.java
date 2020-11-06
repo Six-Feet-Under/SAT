@@ -1,7 +1,7 @@
 package com.heneng.demo.controller;
 
 
-import com.heneng.demo.entity.Jud;
+import com.heneng.demo.model.Jud;
 import com.heneng.demo.service.JudService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

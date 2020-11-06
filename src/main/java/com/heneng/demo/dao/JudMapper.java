@@ -1,12 +1,12 @@
 package com.heneng.demo.dao;
 
-import com.heneng.demo.entity.Jud;
-import org.springframework.stereotype.Repository;
+import com.heneng.demo.model.Jud;
+import org.mapstruct.Mapper;
 
 import java.util.List;
 import java.util.Map;
 
-@Repository
+@Mapper
 public interface JudMapper {
     void insertJud(Jud jud);
 

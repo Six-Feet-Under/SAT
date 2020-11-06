@@ -2,15 +2,20 @@ package com.heneng.demo.controller;
 
 import com.heneng.demo.model.User;
 import com.heneng.demo.service.UserService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController
+@Api(value = "用户接口信息", tags = {"用户接口信息"})
 public class UserController {
+    
     @Autowired
     UserService userService ;
 

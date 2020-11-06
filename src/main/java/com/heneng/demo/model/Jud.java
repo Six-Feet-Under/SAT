@@ -1,4 +1,4 @@
-package com.heneng.demo.entity;
+package com.heneng.demo.model;
 
 public class Jud {
 

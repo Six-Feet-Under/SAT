@@ -1,22 +1,25 @@
 package com.heneng.demo.service;
 
 import com.heneng.demo.model.User;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface UserService {
 
-    public int insertUser(User user) ;
+     int insertUser(User user) ;
 
-    public User login(String account, String passWord) ;
+     User login(@Param("account") String account, @Param("passWord") String passWord) ;
 
-    public int deleteUser(long id) ;
+     int deleteUser(long id) ;
 
-    public List<User> selectAll();
+     List<User> selectAll();
 
-    public int updateUser(User user) ;
+     int updateUser(User user) ;
 
-    public int registerUser(User user) ;
+     int registerUser(User user) ;
 
-    public User selectUserById(long id);
+     User selectUserById(long id);
 }

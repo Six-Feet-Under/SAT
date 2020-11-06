@@ -1,6 +1,7 @@
 package com.heneng.demo.model;
 
 public class User {
+    
     private long id; //自增主键 id
 
     private String uid; //id
@@ -12,6 +13,7 @@ public class User {
     private String passWord; //密码
 
     private String uPudB; //加密后密码（B钥）
+
 
     public long getId() {
         return id;
@@ -58,6 +60,15 @@ public class User {
     }
 
     public void setuPudB(String uPudB) {
+        this.uPudB = uPudB;
+    }
+
+    public User(long id, String uid, String userName, String account, String passWord, String uPudB) {
+        this.id = id;
+        this.uid = uid;
+        this.userName = userName;
+        this.account = account;
+        this.passWord = passWord;
         this.uPudB = uPudB;
     }
 }
