@@ -13,22 +13,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+
 @RestController
 public class RoleController {
     @Autowired
-    private RoleService roleService;
+    public RoleService roleService;
 
     @ApiOperation(value="增加角色信息接口", notes="增加角色信息")
-    @RequestMapping(value = "/role/insertLog", method = RequestMethod.POST)
+    @RequestMapping(value = "/role/insertRole", method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "strs", value = "private int id;  //自增主键id\n" +
                     "    private String user_id;  //用户的uid\n" +
                     "    private int role_id;  //角色的id", required = true,
                     dataType = "string", paramType = "")
     })
-    public int insertJud(String user_id,Integer jud_id) {
+    public int insertRole(Role role) {
         try {
-            int num = roleService.insertRole(user_id,jud_id);
+            int num = roleService.insertRole(role);
             return num;
         }catch (Exception e){
             return 0;

@@ -15,8 +15,8 @@ public class RoleServiceImpl implements RoleService{
     private RoleMapper roleMapper;
 
     @Override
-    public int insertRole(String user_id, Integer role_id) {
-       return roleMapper.insertRole(user_id,role_id);
+    public int insertRole(Role role) {
+       return roleMapper.insertRole(role);
     }
 
     @Override

@@ -11,16 +11,16 @@ import java.util.List;
 public class JudServiceImpl implements JudService{
 
     @Autowired
-    JudMapper judMapper;
+    public JudMapper judMapper;
 
     @Override
-    public int insertJud(String user_id,Integer jud_id) {
-         return judMapper.insertJud(user_id,jud_id);
+    public int insertJud(Jud jud) {
+         return judMapper.insertJud(jud);
     }
 
     @Override
-    public int deleteByUid(String id) {
-        return judMapper.deleteByUid(id);
+    public int deleteById(String id) {
+        return judMapper.deleteById(id);
     }
 
     @Override

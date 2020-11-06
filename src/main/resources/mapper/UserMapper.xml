@@ -15,7 +15,7 @@
         id,uid,userName,account,passWord,uPwdB
     </sql>
 
-    <select id="login" resultMap="com.heneng.demo.model.User" parameterType="java.lang.String">
+    <select id="login" resultType="com.heneng.demo.model.User" parameterType="java.lang.String">
         select *
         from user
         where account=#{account} and passWord=#{passWord}

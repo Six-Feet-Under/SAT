@@ -9,9 +9,9 @@ import java.util.List;
 @Mapper
 public interface JudMapper {
 
-    int insertJud(String user_id,Integer jud_id);
+    int insertJud(Jud jud);
 
-    int deleteByUid(String id) ;
+    int deleteById(String id) ;
 
     List<Jud> selectAll();
 

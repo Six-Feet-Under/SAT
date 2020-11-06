@@ -5,13 +5,12 @@
 <mapper namespace="com.heneng.demo.dao.JudMapper">
     <resultMap id="BaseResultMap" type="com.heneng.demo.model.Jud">
         <id column="id" property="id" jdbcType="BIGINT"/>
-        <result column="user_id" property="user_id" jdbcType="VARCHAR"/>
-        <result column="jud_id" property="jud_id" jdbcType="int"/>
+        <result column="judname" property="judname" jdbcType="VARCHAR"/>
     </resultMap>
     <insert id="insertJud" parameterType="com.heneng.demo.model.Jud">
-        INSERT INTO user_jud (id,user_uid,jud_id)
+        INSERT INTO user_role (id,user_uid,role_id)
             VALUES
-	        ( #{user_id}, #{jud_id});
+	        ( #{user_id}, #{role_id});
 
     </insert>
 </mapper>

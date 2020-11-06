@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface RoleService {
 
-    int insertRole(String user_id, Integer role_id);
+    int insertRole(Role role);
 
 
     int deleteRole(String uid);

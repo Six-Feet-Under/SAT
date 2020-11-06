@@ -16,24 +16,24 @@ import io.swagger.annotations.Api;
 import java.util.List;
 
 
+
 @RestController
 @Api(value = "权限信息接口",tags = {"权限信息接口"})
 public class JudController {
 
     @Autowired
-    JudService judService;
+    public JudService judService;
 
     @ApiOperation(value="增加权限信息接口", notes="增加权限信息信息")
     @RequestMapping(value = "/jud/insertLog", method = RequestMethod.POST)
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "strs", value = "private int id;  //自增主键\n" +
-                    "    private int user_id;  //用户的uid\n" +
-                    "    private int jud_id;  //权限的id", required = true,
+            @ApiImplicitParam(name = "strs", value = "private String id;  //自增主键\n" +
+                    "    private String  judname;  //权限的名称", required = true,
                     dataType = "string", paramType = "Jud")
     })
-    public int insertJud(String user_id,Integer jud_id) {
+    public int insertJud(Jud jud) {
         try {
-            int num = judService.insertJud(user_id,jud_id);
+            int num = judService.insertJud(jud);
             return num;
         }catch (Exception e){
             return 0;
@@ -41,14 +41,14 @@ public class JudController {
     }
 
     @ApiOperation(value="删除权限信息接口", notes="删除权限信息")
-    @RequestMapping(value = "/jud/deleteByUid", method = RequestMethod.POST)
+    @RequestMapping(value = "/jud/deleteById", method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
                     dataType = "string", paramType = "String")
     })
-    public int deleteByUid(String  uid) {
+    public int deleteById(String id) {
         try{
-            int num = judService.deleteByUid(uid);
+            int num = judService.deleteById(id);
             return num;
         } catch (Exception e) {
             return 0;

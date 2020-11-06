@@ -10,7 +10,7 @@ import java.util.List;
 public interface RoleMapper {
     public int deleteRole(String uid) ;
 
-    public int insertRole(String user_id, Integer role_id);
+    public int insertRole(Role role);
 
     int updateRole(Role role);
 
