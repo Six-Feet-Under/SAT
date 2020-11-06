@@ -7,13 +7,13 @@ import java.util.List;
 
 @Repository
 public interface JudService {
-    void insertJud(Jud jud);
+    int insertJud(String user_id,Integer jud_id);
 
-    void deleteByUid(String id);
+    int deleteByUid(String id);
 
     List<Jud> selectAll();
 
     Jud selectJudByUid(String  id);
 
-    void updateJudByUid(String id);
+    int updateJud(Jud jud);
 }
