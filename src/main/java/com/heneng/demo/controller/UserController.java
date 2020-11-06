@@ -18,7 +18,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    UserService userService ;
+    public UserService userService ;
 
     @ApiOperation(value="登录", notes="登录")
     @RequestMapping(value = "/user/login", method = RequestMethod.POST)
@@ -26,13 +26,13 @@ public class UserController {
             @ApiImplicitParam(name = "account",value = "账户",required = true,dataType = "String",paramType = "String"),
             @ApiImplicitParam(name = "passWord",value = "密码",required = true,dataType = "String",paramType = "String"),
     })
-    private User login(String account,String passWord){
-        try {
+    public User login(String account,String passWord){
+    //   try {
             User user = userService.login(account,passWord);
             return user;
-        }catch (Exception e){
-            return null;
-        }
+//        }catch (Exception e){
+//            return null;
+//        }
     }
 
     @ApiOperation(value = "新增",notes = "新增用户")
@@ -49,7 +49,7 @@ public class UserController {
             "\n" +
             "    private String uPudB; //加密后密码（B钥）"
             ,required = true,dataType = "int",paramType = "user")
-    private int insertUser(User user){
+    public int insertUser(User user){
         try {
             int num = userService.insertUser(user);
             return num;
@@ -72,7 +72,7 @@ public class UserController {
             "\n" +
             "    private String uPudB; //加密后密码（B钥）"
             ,required = true,dataType = "int",paramType = "user")
-    private int registerUser(User user){
+    public int registerUser(User user){
         try {
             int num = userService.registerUser(user);
             return num;
@@ -108,7 +108,7 @@ public class UserController {
             "\n" +
             "    private String uPudB; //加密后密码（B钥）"
             ,required = true,dataType = "int",paramType = "user")
-    private int updateUser(User user){
+    public int updateUser(User user){
         try {
             int num = userService.updateUser(user);
             return  num;
@@ -120,19 +120,19 @@ public class UserController {
     @ApiOperation(value = "查询",notes = "查询所有")
     @RequestMapping(value = "/user/selectAll",method = RequestMethod.POST)
     @ApiImplicitParam(dataType = "list")
-    private List<User> selectAll(){
-        try {
+    public List<User> selectAll(){
+//        try {
             List<User> list = userService.selectAll();
             return list;
-        }catch (Exception e){
-            return null;
-        }
+//        }catch (Exception e){
+//            return null;
+//        }
     }
 
     @ApiOperation(value = "查询",notes = "根据id查询用户")
     @RequestMapping(value = "/user/selectUserById",method = RequestMethod.POST)
     @ApiImplicitParam(name = "id" ,value = "id",required = true,dataType = "user",paramType = "long")
-    private User selectUserById(long id){
+    public User selectUserById(long id){
         try{
             User user =  userService.selectUserById(id);
             return user;
@@ -141,4 +141,9 @@ public class UserController {
         }
     }
 
+    @RequestMapping(value = "/user/sys",method = RequestMethod.POST)
+    public String sys(String name){
+        name = "1231564";
+        return name;
+    }
 }

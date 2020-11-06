@@ -1,16 +1,18 @@
 package com.heneng.demo.dao;
 
 import com.heneng.demo.model.User;
-import org.mapstruct.Mapper;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Mapper
+@Repository
 public interface UserMapper {
 
     int insertUser(User user);
 
-    User login(String account, String password);
+    User login(@Param("account") String account, @Param("passWord") String passWord);
 
     int deleteUser(long id);
 

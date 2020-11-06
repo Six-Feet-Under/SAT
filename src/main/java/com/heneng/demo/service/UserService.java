@@ -11,7 +11,7 @@ public interface UserService {
 
      int insertUser(User user) ;
 
-     User login(@Param("account") String account, @Param("passWord") String passWord) ;
+     User login( String account, String passWord) ;
 
      int deleteUser(long id) ;
 
