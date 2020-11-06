@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 
 import java.util.List;
-import java.util.Map;
+
 
 @RestController
 @Api(value = "权限信息接口",tags = {"权限信息接口"})
@@ -48,10 +48,10 @@ public class JudController {
                     dataType = "string", paramType = "String")
     })
     public String deleteByUid(String  uid) {
-        if(selectJudByUid(uid)!=null){
+        if(selectJudByUid(uid)==null){
             judService.deleteByUid(uid);
         }else {
-            return"用户不存在";
+            return"用户存在";
         }
         return "success";
     }
@@ -88,7 +88,6 @@ public class JudController {
         if(selectJudByUid(uid)!=null){
             judService.updateJudByUid(uid);
         }
-
         return "success";
     }
 }
