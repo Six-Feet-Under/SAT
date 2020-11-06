@@ -142,9 +142,110 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/user/sys",method = RequestMethod.POST)
-    public String sys(String name){
-        name = "1231564";
-        return name;
+
+
+
+    public int insertUserRole(String uid){
+        try{
+            int num = userService.insertUserRole(uid);
+            return num;
+        }catch (Exception e){
+            return 0;
+        }
+    }
+    public int deleteUserRole(String uid){
+        try{
+            int num = userService.deleteUserRole(uid);
+            return num;
+        }catch (Exception e){
+            return 0;
+        }
+    }
+    public int updateUserRole(String uid){
+        try{
+            int num = userService.updateUserRole(uid);
+            return num;
+        }catch (Exception e){
+            return 0;
+        }
+    }
+    public List<String> selectUserRole(String uid){
+        try{
+            List<String> list = userService.selectUserRole(uid);
+            return list;
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+
+
+
+    public int insertUserJud(String uid){
+        try{
+            int num = userService.insertUserJud(uid);
+            return num;
+        }catch (Exception e){
+            return 0;
+        }
+    }
+    public int deleteUserJud(String uid){
+        try{
+            int num = userService.deleteUserJud(uid);
+            return num;
+        }catch (Exception e){
+            return 0;
+        }
+    }
+    public int updateUserJud(String uid){
+        try{
+            int num = userService.updateUserJud(uid);
+            return num;
+        }catch (Exception e){
+            return 0;
+        }
+    }
+    public  List<String> selectUserJud(String uid){
+        try{
+            List<String> list = userService.selectUserJud(uid);
+            return list;
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+
+
+    public int insertUserDept(String uid){
+        try{
+            int num = userService.insertUserDept(uid);
+            return num;
+        }catch (Exception e){
+            return 0;
+        }
+    }
+    public int deleteUserDept(String uid){
+        try{
+            int num = userService.deleteUserDept(uid);
+            return num;
+        }catch (Exception e){
+            return 0;
+        }
+    }
+    public int updateUserDept(String uid){
+        try{
+            int num = userService.updateUserDept(uid);
+            return num;
+        }catch (Exception e){
+            return 0;
+        }
+    }
+    public  List<String> selectUserDept(String uid){
+        try{
+            List<String> list = userService.selectUserDept(uid);
+            return list;
+        }catch (Exception e){
+            return null;
+        }
     }
 }

@@ -23,4 +23,5 @@ public interface UserMapper {
     User selectUserById(long id);
 
     List<User> selectAll();
+
 }
