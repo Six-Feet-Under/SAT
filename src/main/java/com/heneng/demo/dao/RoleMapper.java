@@ -8,13 +8,13 @@ import java.util.List;
 
 @Mapper
 public interface RoleMapper {
-    public int deleteRole(String uid) ;
+    public int deleteRole(int id) ;
 
     public int insertRole(Role role);
 
     int updateRole(Role role);
 
-    Role seleteById(String uid);
+    Role seleteById(int id);
 
     List<Jud> selectAll();
 }

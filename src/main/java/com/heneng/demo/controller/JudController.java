@@ -44,9 +44,9 @@ public class JudController {
     @RequestMapping(value = "/jud/deleteById", method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
-                    dataType = "string", paramType = "String")
+                    dataType = "string", paramType = "int")
     })
-    public int deleteById(String id) {
+    public int deleteById(int id) {
         try{
             int num = judService.deleteById(id);
             return num;
@@ -74,9 +74,9 @@ public class JudController {
     @RequestMapping(value = "/jud/selectJudByUid", method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
-                    dataType = "Jud", paramType = "String")
+                    dataType = "Jud", paramType = "int")
     })
-    public Jud selectJudByUid(String id) {
+    public Jud selectJudByUid(int id) {
         try{
             Jud jud =  judService.selectJudByUid(id);
             return jud;

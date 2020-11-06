@@ -25,7 +25,7 @@ public class RoleController {
             @ApiImplicitParam(name = "strs", value = "private int id;  //自增主键id\n" +
                     "    private String user_id;  //用户的uid\n" +
                     "    private int role_id;  //角色的id", required = true,
-                    dataType = "string", paramType = "")
+                    dataType = "string", paramType = "Role")
     })
     public int insertRole(Role role) {
         try {
@@ -40,11 +40,11 @@ public class RoleController {
     @RequestMapping(value = "/role/deleteRole", method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "strs", value = "更新列表", required = true,
-                    dataType = "int", paramType = "String")
+                    dataType = "int", paramType = "int")
     })
-    public int deleteRole(String  uid){
+    public int deleteRole(int id){
         try{
-            int num = roleService.deleteRole(uid);
+            int num = roleService.deleteRole(id);
             return num;
         } catch (Exception e) {
             return 0;
@@ -70,12 +70,12 @@ public class RoleController {
     @RequestMapping(value = "/role/seleteById", method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
-                    dataType = "Jud", paramType = "String")
+                    dataType = "Role", paramType = "int")
     })
-    public Role seleteById(String uid){
+    public Role seleteById(int id){
 
         try{
-            Role role =  roleService.seleteById(uid);
+            Role role =  roleService.seleteById(id);
             return role;
         }catch (Exception e){
             return null;

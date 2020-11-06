@@ -20,8 +20,8 @@ public class RoleServiceImpl implements RoleService{
     }
 
     @Override
-    public int deleteRole(String uid) {
-        return roleMapper.deleteRole(uid);
+    public int deleteRole(int id) {
+        return roleMapper.deleteRole(id);
     }
 
     @Override
@@ -30,8 +30,8 @@ public class RoleServiceImpl implements RoleService{
     }
 
     @Override
-    public Role seleteById(String uid) {
-        return roleMapper.seleteById(uid);
+    public Role seleteById(int id) {
+        return roleMapper.seleteById(id);
     }
 
     @Override

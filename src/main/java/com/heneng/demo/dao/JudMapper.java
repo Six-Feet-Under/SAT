@@ -11,11 +11,11 @@ public interface JudMapper {
 
     int insertJud(Jud jud);
 
-    int deleteById(String id) ;
+    int deleteById(int id) ;
 
     List<Jud> selectAll();
 
-    Jud selectJudById(String id);
+    Jud selectJudById(int id);
 
     int updateJud(Jud jud);
 }
