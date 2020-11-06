@@ -1,0 +1,50 @@
+package com.heneng.demo.model;
+
+public class Jud {
+
+    private int id;
+    private String user_id;
+    private int jud_id;
+
+    public Jud() {
+    }
+
+    public Jud(int id, String user_id, int jud_id) {
+        this.id = id;
+        this.user_id = user_id;
+        this.jud_id = jud_id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public int getJud_id() {
+        return jud_id;
+    }
+
+    public void setJud_id(int jud_id) {
+        this.jud_id = jud_id;
+    }
+
+    @Override
+    public String toString() {
+        return "Jud{" +
+                "id=" + id +
+                ", user_id=" + user_id +
+                ", jud_id=" + jud_id +
+                '}';
+    }
+}

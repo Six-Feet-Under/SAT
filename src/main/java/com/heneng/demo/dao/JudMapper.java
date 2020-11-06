@@ -1,6 +1,6 @@
 package com.heneng.demo.dao;
 
-import com.heneng.demo.entity.Jud;
+import com.heneng.demo.model.Jud;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

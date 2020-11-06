@@ -1,7 +1,7 @@
 package com.heneng.demo.service;
 
 import com.heneng.demo.dao.JudMapper;
-import com.heneng.demo.entity.Jud;
+import com.heneng.demo.model.Jud;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

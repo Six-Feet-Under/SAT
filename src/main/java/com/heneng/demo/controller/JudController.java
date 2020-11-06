@@ -1,7 +1,7 @@
 package com.heneng.demo.controller;
 
 
-import com.heneng.demo.entity.Jud;
+import com.heneng.demo.model.Jud;
 import com.heneng.demo.service.JudService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -70,7 +70,7 @@ public class JudController {
     }
 
     @ApiOperation(value="查询权限信息接口", notes="查询权限信息")
-    @RequestMapping(value = "/jud/selectJudById", method = RequestMethod.POST)
+    @RequestMapping(value = "/jud/updateJudById", method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
                     dataType = "String", paramType = "int")
