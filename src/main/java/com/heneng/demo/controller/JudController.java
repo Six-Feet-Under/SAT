@@ -32,7 +32,7 @@ public class JudController {
                     dataType = "string", paramType = "Jud")
     })
     public String  insertJud(Jud jud) {
-        if(selectJudByUid(jud.getUser_id())!=null){
+        if(selectJudByUid(jud.getUser_id()+"")!= null){
             return"用户已存在";
         }else {
             judService.insertJud(jud);
