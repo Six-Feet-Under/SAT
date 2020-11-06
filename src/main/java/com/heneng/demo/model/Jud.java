@@ -2,11 +2,10 @@ package com.heneng.demo.model;
 
 public class Jud {
 
-    private int id;
-    private String judname;
+    private int id;  //自增主键
+    private String  judname;  //权限的名称
 
     public Jud() {
-
     }
 
     public Jud(int id, String judname) {
