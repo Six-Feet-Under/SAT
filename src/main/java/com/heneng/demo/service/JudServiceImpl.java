@@ -11,7 +11,7 @@ import java.util.List;
 public class JudServiceImpl implements JudService{
 
     @Autowired
-    private JudMapper judMapper;
+    JudMapper judMapper;
 
     @Override
     public int insertJud(String user_id,Integer jud_id) {

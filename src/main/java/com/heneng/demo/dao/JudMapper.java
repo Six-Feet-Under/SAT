@@ -6,12 +6,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Mapper
 public interface JudMapper {
 
-    public int insertJud(String user_id,Integer jud_id);
+    int insertJud(String user_id,Integer jud_id);
 
-    public int deleteByUid(String id) ;
+    int deleteByUid(String id) ;
 
     List<Jud> selectAll();
 

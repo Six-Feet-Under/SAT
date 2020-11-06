@@ -21,7 +21,7 @@ import java.util.List;
 public class JudController {
 
     @Autowired
-    private JudService judService;
+    JudService judService;
 
     @ApiOperation(value="增加权限信息接口", notes="增加权限信息信息")
     @RequestMapping(value = "/jud/insertLog", method = RequestMethod.POST)
