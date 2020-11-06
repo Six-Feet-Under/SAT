@@ -3,12 +3,40 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.heneng.demo.dao.RoleMapper">
+    <resultMap id="BaseResultMap" type="com.heneng.demo.model.Role">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="rolename" property="rolename" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="BaseResultMap" >
+        select * from role
+    </select>
+
+    <select id="seleteById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select * from jud where id = #{id}
+    </select>
 
     <insert id="insertRole" parameterType="com.heneng.demo.model.Role">
-        INSERT INTO user_role (id,user_uid,role_id)
-            VALUES
-	        ( #{user_id}, #{role_id});
+      INSERT INTO `test`.`role` (
+      id,
+      rolename
+    )
+    VALUES
+      (
+        #{id},
+        #{rolename}
+      )
+  </insert>
 
-    </insert>
+    <delete id="deleteRole" parameterType="java.lang.Integer">
+        delete from role where id = #{id}
+    </delete>
+    <update id="updateRole" parameterType="com.heneng.demo.model.Role">
+        UPDATE
+        `test`.`role`
+        SET
+        `rolename` = #{rolename}
+        WHERE `id` = #{id}
+  </update>
 
 </mapper>

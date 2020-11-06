@@ -20,7 +20,7 @@ public class RoleServiceImpl implements RoleService{
     }
 
     @Override
-    public int deleteRole(int id) {
+    public int deleteRole(Integer id) {
         return roleMapper.deleteRole(id);
     }
 
@@ -30,7 +30,7 @@ public class RoleServiceImpl implements RoleService{
     }
 
     @Override
-    public Role seleteById(int id) {
+    public Role seleteById(Integer id) {
         return roleMapper.seleteById(id);
     }
 

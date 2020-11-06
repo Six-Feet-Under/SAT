@@ -4,13 +4,39 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.heneng.demo.dao.JudMapper">
     <resultMap id="BaseResultMap" type="com.heneng.demo.model.Jud">
-        <id column="id" property="id" jdbcType="BIGINT"/>
+        <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="judname" property="judname" jdbcType="VARCHAR"/>
     </resultMap>
-    <insert id="insertJud" parameterType="com.heneng.demo.model.Jud">
-        INSERT INTO user_role (id,user_uid,role_id)
-            VALUES
-	        ( #{user_id}, #{role_id});
 
-    </insert>
+    <select id="selectAll" resultMap="BaseResultMap" >
+        select * from jud
+    </select>
+
+    <select id="selectJudById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select * from jud where id = #{id}
+    </select>
+
+    <insert id="insertJud" parameterType="com.heneng.demo.model.Jud">
+      INSERT INTO jud (
+      id,
+      judname
+    )
+    VALUES
+      (
+        #{id},
+        #{judname}
+      )
+  </insert>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from jud where id = #{id}
+    </delete>
+
+    <update id="updateJud" parameterType="com.heneng.demo.model.Jud">
+        UPDATE
+        `test`.`jud`
+        SET
+        `judname` = #{judname}
+        WHERE `id` = #{id}
+  </update>
 </mapper>

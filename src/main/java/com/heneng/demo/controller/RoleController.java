@@ -28,12 +28,12 @@ public class RoleController {
                     dataType = "string", paramType = "Role")
     })
     public int insertRole(Role role) {
-        try {
+       // try {
             int num = roleService.insertRole(role);
             return num;
-        }catch (Exception e){
+        /*}catch (Exception e){
             return 0;
-        }
+        }*/
     }
 
     @ApiOperation(value="删除角色信息接口", notes="删除角色信息")
@@ -42,7 +42,7 @@ public class RoleController {
             @ApiImplicitParam(name = "strs", value = "更新列表", required = true,
                     dataType = "int", paramType = "int")
     })
-    public int deleteRole(int id){
+    public int deleteRole(Integer id){
         try{
             int num = roleService.deleteRole(id);
             return num;
@@ -72,7 +72,7 @@ public class RoleController {
             @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
                     dataType = "Role", paramType = "int")
     })
-    public Role seleteById(int id){
+    public Role seleteById(Integer id){
 
         try{
             Role role =  roleService.seleteById(id);

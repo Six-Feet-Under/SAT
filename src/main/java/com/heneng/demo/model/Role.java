@@ -1,22 +1,22 @@
 package com.heneng.demo.model;
 
 public class Role {
-    private int id;  //自增主键id
+    private Integer id;  //自增主键id
     private String rolename;  //角色的名称
 
     public Role() {
     }
 
-    public Role(int id, String rolename) {
+    public Role(Integer id, String rolename) {
         this.id = id;
         this.rolename = rolename;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -28,11 +28,11 @@ public class Role {
         this.rolename = rolename;
     }
 
-    @Override
-    public String toString() {
-        return "Role{" +
-                "id='" + id + '\'' +
-                ", role='" + rolename + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Role{" +
+//                "id='" + id + '\'' +
+//                ", role='" + rolename + '\'' +
+//                '}';
+//    }
 }
