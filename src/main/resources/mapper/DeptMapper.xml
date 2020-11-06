@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heneng.demo.dao.DeptMapper">
+    <resultMap id="BaseResultMap" type="com.heneng.demo.model.Dept">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="deptname" property="deptname" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+            id,deptname
+    </sql>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select *
+        from dept
+    </select>
+
+    <select id="selectDeptById" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+        select *
+        from dept
+        where id = #{id}
+    </select>
+
+    <insert id="insertDept" parameterType="com.heneng.demo.model.Dept">
+        insert
+        into dept (id,deptname)
+        values (#{id},#{deptname})
+    </insert>
+
+    <delete id="deleteDeptById" parameterType="java.lang.Integer">
+        delete
+        from dept
+        where id = #{id}
+    </delete>
+
+    <update id="updateDept" parameterType="com.heneng.demo.model.Dept">
+        update dept
+        set
+        <if test="deptname != null">
+        deptname = #{deptname}
+        </if>
+        where id = #{id}
+    </update>
+</mapper>

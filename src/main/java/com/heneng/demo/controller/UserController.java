@@ -27,12 +27,12 @@ public class UserController {
             @ApiImplicitParam(name = "passWord",value = "密码",required = true,dataType = "String",paramType = "String"),
     })
     public User login(String account,String passWord){
-    //   try {
+       try {
             User user = userService.login(account,passWord);
             return user;
-//        }catch (Exception e){
-//            return null;
-//        }
+        }catch (Exception e){
+            return null;
+        }
     }
 
     @ApiOperation(value = "新增",notes = "新增用户")
@@ -52,6 +52,7 @@ public class UserController {
     public int insertUser(User user){
         try {
             int num = userService.insertUser(user);
+            System.out.println(num);
             return num;
         }catch (Exception e){
             return 0;
@@ -82,11 +83,11 @@ public class UserController {
     }
 
     @ApiOperation(value = "删除",notes = "删除用户")
-    @RequestMapping(value = "/user/deleteUser",method = RequestMethod.POST)
+    @RequestMapping(value = "/user/deleteUserById",method = RequestMethod.POST)
     @ApiImplicitParam(name = "id",value = "id",required = true,dataType = "int",paramType = "long")
-    private int deleteUser(long id){
+    private int deleteUserById(long id){
         try {
-            int num = userService.deleteUser(id);
+            int num = userService.deleteUserById(id);
             return num;
         }catch (Exception e){
             return 0;
@@ -109,24 +110,24 @@ public class UserController {
             "    private String uPudB; //加密后密码（B钥）"
             ,required = true,dataType = "int",paramType = "user")
     public int updateUser(User user){
-        try {
+//        try {
             int num = userService.updateUser(user);
             return  num;
-        }catch (Exception e){
-            return 0;
-        }
+//        }catch (Exception e){
+//            return 0;
+//        }
     }
 
     @ApiOperation(value = "查询",notes = "查询所有")
     @RequestMapping(value = "/user/selectAll",method = RequestMethod.POST)
     @ApiImplicitParam(dataType = "list")
     public List<User> selectAll(){
-//        try {
+        try {
             List<User> list = userService.selectAll();
             return list;
-//        }catch (Exception e){
-//            return null;
-//        }
+        }catch (Exception e){
+            return null;
+        }
     }
 
     @ApiOperation(value = "查询",notes = "根据id查询用户")

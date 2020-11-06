@@ -13,7 +13,7 @@ public interface UserService {
 
      User login( String account, String passWord) ;
 
-     int deleteUser(long id) ;
+     int deleteUserById(long id) ;
 
      List<User> selectAll();
 
