@@ -4,6 +4,7 @@ import com.heneng.demo.model.Dept;
 import com.heneng.demo.service.DeptService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +20,11 @@ public class DeptController {
     @Autowired
     public DeptService deptService;
 
-    @ApiOperation(value="查询所有", notes="查询所有")
+    @ApiOperation(value="查询所有部门信息接口", notes="查询所有部门信息")
     @RequestMapping(value = "/dept/selectAll", method = RequestMethod.POST)
-    @ApiImplicitParam(type = "list")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "" ,value = "部门列表",required = true,dataType = "int",paramType = "")
+    })
     public List<Dept> selectAll(){
         try{
             List<Dept> list = deptService.selectAll();
@@ -31,9 +34,11 @@ public class DeptController {
         }
     }
 
-    @ApiOperation(value="根据ID查询部门", notes="根据ID查询部门")
+    @ApiOperation(value="根据ID查询部门信息接口", notes="根据ID查询部门信息")
     @RequestMapping(value = "/dept/selectDeptById", method = RequestMethod.POST)
-    @ApiImplicitParam(name = "id" ,value = "id",required = true,dataType = "int",paramType = "int")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id" ,value = "id",required = true,dataType = "int",paramType = "int")
+    })
     public int selectDeptById(int id){
         try {
             int num = deptService.selectDeptById(id);
@@ -43,13 +48,15 @@ public class DeptController {
         }
     }
 
-    @ApiOperation(value="新增部门", notes="新增部门")
+    @ApiOperation(value="新增部门信息接口", notes="新增部门信息")
     @RequestMapping(value = "/dept/insertDept", method = RequestMethod.POST)
-    @ApiImplicitParam(name = "id" ,value = "       " +
-            " private int id; //部门id\n" +
-            "\n" +
-            " private String deptname; //部门名称",
-            required = true,dataType = "int",paramType = "dept")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id" ,value = "       " +
+                    " private int id; //部门id\n" +
+                    "\n" +
+                    " private String deptname; //部门名称",
+                    required = true,dataType = "int",paramType = "dept")
+    })
     public int insertDept(Dept dept){
         try {
             int num = deptService.insertDept(dept);
@@ -59,9 +66,11 @@ public class DeptController {
         }
     }
 
-    @ApiOperation(value="根据ID删除部门", notes="根据ID删除部门")
+    @ApiOperation(value="根据ID删除部门信息接口", notes="根据ID删除部门信息")
     @RequestMapping(value = "/dept/deleteDeptById", method = RequestMethod.POST)
-    @ApiImplicitParam(name = "id" ,value = "id",required = true,dataType = "int",paramType = "int")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id" ,value = "id",required = true,dataType = "int",paramType = "int")
+    })
     public int deleteDeptById(int id){
         try {
             int num = deptService.deleteDeptById(id);
@@ -71,13 +80,15 @@ public class DeptController {
         }
     }
 
-    @ApiOperation(value="更新部门", notes="更新部门")
+    @ApiOperation(value="更新部门信息接口", notes="更新部门信息")
     @RequestMapping(value = "/dept/updateDept", method = RequestMethod.POST)
-    @ApiImplicitParam(name = "id" ,value = "       " +
-            " private int id; //部门id\n" +
-            "\n" +
-            " private String deptname; //部门名称",
-            required = true,dataType = "int",paramType = "dept")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id" ,value = "       " +
+                    " private int id; //部门id\n" +
+                    "\n" +
+                    " private String deptname; //部门名称",
+                    required = true,dataType = "int",paramType = "dept")
+    })
     public int updateDept(Dept dept){
         try {
             int num = deptService.updateDept(dept);
