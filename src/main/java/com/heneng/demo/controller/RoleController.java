@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 public class RoleController {
+
     @Autowired
     public RoleService roleService;
 
@@ -25,22 +26,22 @@ public class RoleController {
             @ApiImplicitParam(name = "strs", value = "private int id;  //自增主键id\n" +
                     "    private String user_id;  //用户的uid\n" +
                     "    private int role_id;  //角色的id", required = true,
-                    dataType = "string", paramType = "Role")
+                    dataType = "int", paramType = "Role")
     })
     public int insertRole(Role role) {
-       // try {
+       try {
             int num = roleService.insertRole(role);
             return num;
-        /*}catch (Exception e){
+        }catch (Exception e){
             return 0;
-        }*/
+        }
     }
 
     @ApiOperation(value="删除角色信息接口", notes="删除角色信息")
     @RequestMapping(value = "/role/deleteRole", method = RequestMethod.POST)
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "strs", value = "更新列表", required = true,
-                    dataType = "int", paramType = "int")
+            @ApiImplicitParam(name = "strs", value = "角色列表", required = true,
+                    dataType = "int", paramType = "Integer")
     })
     public int deleteRole(Integer id){
         try{
@@ -54,8 +55,8 @@ public class RoleController {
     @ApiOperation(value="更新角色信息接口", notes="更新角色信息")
     @RequestMapping(value = "/role/updateRole", method = RequestMethod.POST)
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "strs", value = "更新列表", required = true,
-                    dataType = "string", paramType = "")
+            @ApiImplicitParam(name = "strs", value = "角色列表", required = true,
+                    dataType = "int", paramType = "Role")
     })
     public int updateRole(Role role){
         try {
@@ -69,8 +70,8 @@ public class RoleController {
     @ApiOperation(value="查询权限信息接口", notes="查询权限信息")
     @RequestMapping(value = "/role/seleteById", method = RequestMethod.POST)
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
-                    dataType = "Role", paramType = "int")
+            @ApiImplicitParam(name = "id", value = "角色列表", required = true,
+                    dataType = "Role", paramType = "Integer")
     })
     public Role seleteById(Integer id){
 
@@ -85,8 +86,8 @@ public class RoleController {
     @ApiOperation(value="查询所有权限信息接口", notes="查询所有权限信息")
     @RequestMapping(value = "/role/selectAll", method = RequestMethod.POST)
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
-                    dataType = "List", paramType = "Map")
+            @ApiImplicitParam(name = "", value = "角色列表", required = true,
+                    dataType = "List", paramType = "")
     })
     public List<Jud> selectAll() {
         try{

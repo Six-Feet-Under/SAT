@@ -29,7 +29,7 @@ public class JudController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "strs", value = "private String id;  //自增主键\n" +
                     "    private String  judname;  //权限的名称", required = true,
-                    dataType = "string", paramType = "Jud")
+                    dataType = "int", paramType = "Jud")
     })
     public int insertJud(Jud jud) {
         try {
@@ -43,8 +43,8 @@ public class JudController {
     @ApiOperation(value="删除权限信息接口", notes="删除权限信息")
     @RequestMapping(value = "/jud/deleteById", method = RequestMethod.POST)
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
-                    dataType = "string", paramType = "int")
+            @ApiImplicitParam(name = "id", value = "权限列表", required = true,
+                    dataType = "int", paramType = "Integer")
     })
     public int deleteById(Integer id) {
         try{
@@ -58,8 +58,8 @@ public class JudController {
     @ApiOperation(value="查询所有权限信息接口", notes="查询所有权限信息")
     @RequestMapping(value = "/jud/selectAll", method = RequestMethod.POST)
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
-                    dataType = "List", paramType = "Map")
+            @ApiImplicitParam(name = "", value = "权限列表", required = true,
+                    dataType = "List", paramType = "")
     })
     public List<Jud> selectAll() {
         try{
@@ -73,8 +73,8 @@ public class JudController {
     @ApiOperation(value="查询权限信息接口", notes="查询权限信息")
     @RequestMapping(value = "/jud/selectJudById", method = RequestMethod.POST)
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
-                    dataType = "Jud", paramType = "int")
+            @ApiImplicitParam(name = "id", value = "权限列表", required = true,
+                    dataType = "Jud", paramType = "Integer")
     })
     public Jud selectJudById(Integer id) {
         try{
@@ -88,8 +88,8 @@ public class JudController {
     @ApiOperation(value="更新权限信息接口", notes="更新权限信息")
     @RequestMapping(value = "/jud/updateJud", method = RequestMethod.POST)
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
-                    dataType = "String", paramType = "String")
+            @ApiImplicitParam(name = "jud", value = "权限列表", required = true,
+                    dataType = "int", paramType = "Jud")
     })
     public int updateJud(Jud jud) {
         try {
