@@ -26,13 +26,13 @@ public interface UserMapper {
 
 
 
-    int insertUserRole(String uid, int roleId);
+    int insertUserRole(@Param("uid") String uid, @Param("roleId")int roleId);
 
-    int deleteUserRole(String uid, int roleId);
+    int deleteUserRole(@Param("uid") String uid,@Param("roleId") int roleId);
 
-    int updateUserRole(String uid, int roleId);
+    int updateUserRole(@Param("uid") String uid,@Param("OroleId") int OroleId,@Param("NroleId")int NroleId);
 
-    List<String> selectUserRole(String uid, int roleId);
+    List<Integer> selectUserRole(@Param("uid") String uid);
 
 
 
@@ -40,9 +40,9 @@ public interface UserMapper {
 
     int deleteUserJud(String uid, int judId);
 
-    int updateUserJud(String uid, int judId);
+    int updateUserJud(String uid, int OjudId,int NjudId);
 
-    List<String> selectUserJud(String uid, int judId);
+    List<Integer> selectUserJud(String uid);
 
 
 
@@ -50,7 +50,7 @@ public interface UserMapper {
 
     int deleteUserDept(String uid, int deptId);
 
-    int updateUserDept(String uid, int deptId);
+    int updateUserDept(String uid, int OdeptId,int NdeptId);
 
-    List<String> selectUserDeptc(String uid, int deptId);
+    List<Integer> selectUserDeptc(String uid);
 }
