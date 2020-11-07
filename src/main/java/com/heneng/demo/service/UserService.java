@@ -25,32 +25,32 @@ public interface UserService {
 
 
 
-     int insertUserRole(String uid);
+     int insertUserRole(String uid,int RoleId);
 
-     int deleteUserRole(String uid);
+     int deleteUserRole(String uid,int RoleId);
 
-     int updateUserRole(String uid);
+     int updateUserRole(String uid,int RoleId);
 
-     List<String> selectUserRole(String uid);
-
-
-
-     int insertUserJud(String uid);
-
-     int deleteUserJud(String uid);
-
-     int updateUserJud(String uid);
-
-     List<String> selectUserJud(String uid);
+     List<String> selectUserRole(String uid,int RoleId);
 
 
 
-     int insertUserDept(String uid);
+     int insertUserJud(String uid,int JudId);
 
-     int deleteUserDept(String uid);
+     int deleteUserJud(String uid,int JudId);
 
-     int updateUserDept(String uid);
+     int updateUserJud(String uid,int JudId);
 
-     List<String> selectUserDept(String uid);
+     List<String> selectUserJud(String uid,int JudId);
+
+
+
+     int insertUserDept(String uid,int DeptId);
+
+     int deleteUserDept(String uid,int DeptId);
+
+     int updateUserDept(String uid,int DeptId);
+
+     List<String> selectUserDept(String uid,int DeptId);
 
 }

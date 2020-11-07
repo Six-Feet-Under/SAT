@@ -46,72 +46,72 @@ public class UserServiceImpl implements UserService{
 
 
     @Override
-    public int insertUserRole(String uid) {
-        return userMapper.insertUserRole(uid);
+    public int insertUserRole(String uid,int RoleId) {
+        return userMapper.insertUserRole(uid,RoleId);
     }
 
     @Override
-    public int deleteUserRole(String uid) {
-        return userMapper.deleteUserRole(uid);
+    public int deleteUserRole(String uid,int RoleId) {
+        return userMapper.deleteUserRole(uid, RoleId);
     }
 
     @Override
-    public int updateUserRole(String uid) {
-        return userMapper.updateUserRole(uid);
+    public int updateUserRole(String uid,int RoleId) {
+        return userMapper.updateUserRole(uid, RoleId);
     }
 
     @Override
-    public List<String> selectUserRole(String uid) {
-        return userMapper.selectUserRole(uid);
-    }
-
-
-
-
-
-
-    @Override
-    public int insertUserJud(String uid) {
-        return userMapper.insertUserJud(uid);
-    }
-
-    @Override
-    public int deleteUserJud(String uid) {
-        return userMapper.deleteUserJud(uid);
-    }
-
-    @Override
-    public int updateUserJud(String uid) {
-        return userMapper.updateUserJud(uid);
-    }
-
-    @Override
-    public List<String> selectUserJud(String uid) {
-        return userMapper.selectUserJud(uid);
+    public List<String> selectUserRole(String uid,int RoleId) {
+        return userMapper.selectUserRole(uid, RoleId);
     }
 
 
 
 
 
+
     @Override
-    public int insertUserDept(String uid) {
-        return userMapper.insertUserDept(uid);
+    public int insertUserJud(String uid,int JudId) {
+        return userMapper.insertUserJud(uid, JudId);
     }
 
     @Override
-    public int deleteUserDept(String uid) {
-        return userMapper.deleteUserDept(uid);
+    public int deleteUserJud(String uid,int JudId) {
+        return userMapper.deleteUserJud(uid, JudId);
     }
 
     @Override
-    public int updateUserDept(String uid) {
-        return userMapper.updateUserDept(uid);
+    public int updateUserJud(String uid,int JudId) {
+        return userMapper.updateUserJud(uid, JudId);
     }
 
     @Override
-    public List<String> selectUserDept(String uid) {
-        return userMapper.selectUserDeptc (uid);
+    public List<String> selectUserJud(String uid,int JudId) {
+        return userMapper.selectUserJud(uid, JudId);
+    }
+
+
+
+
+
+    @Override
+    public int insertUserDept(String uid,int DeptId) {
+        return userMapper.insertUserDept(uid, DeptId);
+    }
+
+    @Override
+    public int deleteUserDept(String uid,int DeptId) {
+        return userMapper.deleteUserDept(uid, DeptId);
+    }
+
+    @Override
+    public int updateUserDept(String uid,int DeptId) {
+        return userMapper.updateUserDept(uid, DeptId);
+    }
+
+    @Override
+    public List<String> selectUserDept(String uid,int DeptId) {
+        return userMapper.selectUserDeptc (uid, DeptId);
     }
 
 

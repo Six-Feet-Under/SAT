@@ -145,33 +145,33 @@ public class UserController {
 
 
 
-    public int insertUserRole(String uid){
+    public int insertUserRole(String uid,int RoleId){
         try{
-            int num = userService.insertUserRole(uid);
+            int num = userService.insertUserRole(uid,RoleId);
             return num;
         }catch (Exception e){
             return 0;
         }
     }
-    public int deleteUserRole(String uid){
+    public int deleteUserRole(String uid,int RoleId){
         try{
-            int num = userService.deleteUserRole(uid);
+            int num = userService.deleteUserRole(uid, RoleId);
             return num;
         }catch (Exception e){
             return 0;
         }
     }
-    public int updateUserRole(String uid){
+    public int updateUserRole(String uid,int RoleId){
         try{
-            int num = userService.updateUserRole(uid);
+            int num = userService.updateUserRole(uid, RoleId);
             return num;
         }catch (Exception e){
             return 0;
         }
     }
-    public List<String> selectUserRole(String uid){
+    public List<String> selectUserRole(String uid,int RoleId){
         try{
-            List<String> list = userService.selectUserRole(uid);
+            List<String> list = userService.selectUserRole(uid,RoleId);
             return list;
         }catch (Exception e){
             return null;
@@ -181,33 +181,33 @@ public class UserController {
 
 
 
-    public int insertUserJud(String uid){
+    public int insertUserJud(String uid,int JudId){
         try{
-            int num = userService.insertUserJud(uid);
+            int num = userService.insertUserJud(uid, JudId);
             return num;
         }catch (Exception e){
             return 0;
         }
     }
-    public int deleteUserJud(String uid){
+    public int deleteUserJud(String uid,int JudId){
         try{
-            int num = userService.deleteUserJud(uid);
+            int num = userService.deleteUserJud(uid, JudId);
             return num;
         }catch (Exception e){
             return 0;
         }
     }
-    public int updateUserJud(String uid){
+    public int updateUserJud(String uid,int JudId){
         try{
-            int num = userService.updateUserJud(uid);
+            int num = userService.updateUserJud(uid, JudId);
             return num;
         }catch (Exception e){
             return 0;
         }
     }
-    public  List<String> selectUserJud(String uid){
+    public  List<String> selectUserJud(String uid,int JudId){
         try{
-            List<String> list = userService.selectUserJud(uid);
+            List<String> list = userService.selectUserJud(uid, JudId);
             return list;
         }catch (Exception e){
             return null;
@@ -216,33 +216,33 @@ public class UserController {
 
 
 
-    public int insertUserDept(String uid){
+    public int insertUserDept(String uid,int DeptId){
         try{
-            int num = userService.insertUserDept(uid);
+            int num = userService.insertUserDept(uid, DeptId);
             return num;
         }catch (Exception e){
             return 0;
         }
     }
-    public int deleteUserDept(String uid){
+    public int deleteUserDept(String uid,int DeptId){
         try{
-            int num = userService.deleteUserDept(uid);
+            int num = userService.deleteUserDept(uid, DeptId);
             return num;
         }catch (Exception e){
             return 0;
         }
     }
-    public int updateUserDept(String uid){
+    public int updateUserDept(String uid,int DeptId){
         try{
-            int num = userService.updateUserDept(uid);
+            int num = userService.updateUserDept(uid, DeptId);
             return num;
         }catch (Exception e){
             return 0;
         }
     }
-    public  List<String> selectUserDept(String uid){
+    public  List<String> selectUserDept(String uid,int DeptId){
         try{
-            List<String> list = userService.selectUserDept(uid);
+            List<String> list = userService.selectUserDept(uid, DeptId);
             return list;
         }catch (Exception e){
             return null;
