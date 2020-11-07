@@ -28,7 +28,7 @@ public class UserController {
             @ApiImplicitParam(name = "passWord",value = "密码",required = true,dataType = "String",paramType = "String"),
     })
     public User login(String account,String passWord){
-       try {
+        try {
             User user = userService.login(account,passWord);
             return user;
         }catch (Exception e){
@@ -99,21 +99,21 @@ public class UserController {
     @RequestMapping(value = "/user/updateUser",method = RequestMethod.POST)
     @ApiImplicitParam(name = "user",value =
             "private long id; //自增主键 id\n" +
-            "\n" +
-            "    private String uid; //id\n" +
-            "\n" +
-            "    private String userName; //名字\n" +
-            "\n" +
-            "    private String account; //长账户\n" +
-            "\n" +
-            "    private String passWord; //密码\n" +
-            "\n" +
-            "    private String uPudB; //加密后密码（B钥）"
+                    "\n" +
+                    "    private String uid; //id\n" +
+                    "\n" +
+                    "    private String userName; //名字\n" +
+                    "\n" +
+                    "    private String account; //长账户\n" +
+                    "\n" +
+                    "    private String passWord; //密码\n" +
+                    "\n" +
+                    "    private String uPudB; //加密后密码（B钥）"
             ,required = true,dataType = "int",paramType = "user")
     public int updateUser(User user){
 //        try {
-            int num = userService.updateUser(user);
-            return  num;
+        int num = userService.updateUser(user);
+        return  num;
 //        }catch (Exception e){
 //            return 0;
 //        }
@@ -175,7 +175,7 @@ public class UserController {
     }
 
     public List<Integer> selectUserRole(String uid){
-       try{
+        try{
             List<Integer> list = userService.selectUserRole(uid);
             return list;
         }catch (Exception e){
@@ -284,12 +284,5 @@ public class UserController {
         }
     }
 
-    public List<Map> selectUserDeptAll(){
-        try{
-            List<Map> map = userService.selectUserDeptAll();
-            return map;
-        }catch (Exception e){
-            return null;
-        }
-    }
+
 }
