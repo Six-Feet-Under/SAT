@@ -29,9 +29,9 @@ public interface UserService {
 
      int deleteUserRole(String uid,int RoleId);
 
-     int updateUserRole(String uid,int RoleId);
+     int updateUserRole(String uid,int ORoleId,int NRoleId);
 
-     List<String> selectUserRole(String uid,int RoleId);
+     List<Integer> selectUserRole(String uid);
 
 
 
@@ -39,9 +39,9 @@ public interface UserService {
 
      int deleteUserJud(String uid,int JudId);
 
-     int updateUserJud(String uid,int JudId);
+     int updateUserJud(String uid,int OJudId,int NJudId);
 
-     List<String> selectUserJud(String uid,int JudId);
+     List<Integer> selectUserJud(String uid);
 
 
 
@@ -49,8 +49,8 @@ public interface UserService {
 
      int deleteUserDept(String uid,int DeptId);
 
-     int updateUserDept(String uid,int DeptId);
+     int updateUserDept(String uid,int ODeptId,int NDeptId);
 
-     List<String> selectUserDept(String uid,int DeptId);
+     List<Integer> selectUserDept(String uid);
 
 }

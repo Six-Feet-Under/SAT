@@ -144,7 +144,6 @@ public class UserController {
 
 
 
-
     public int insertUserRole(String uid,int RoleId){
         try{
             int num = userService.insertUserRole(uid,RoleId);
@@ -153,6 +152,7 @@ public class UserController {
             return 0;
         }
     }
+
     public int deleteUserRole(String uid,int RoleId){
         try{
             int num = userService.deleteUserRole(uid, RoleId);
@@ -161,21 +161,24 @@ public class UserController {
             return 0;
         }
     }
-    public int updateUserRole(String uid,int RoleId){
+
+    public int updateUserRole(String uid,int ORoleId,int NRoleId){
         try{
-            int num = userService.updateUserRole(uid, RoleId);
+            int num = userService.updateUserRole(uid, ORoleId,NRoleId);
             return num;
         }catch (Exception e){
             return 0;
         }
     }
-    public List<String> selectUserRole(String uid,int RoleId){
-        try{
-            List<String> list = userService.selectUserRole(uid,RoleId);
+
+    @RequestMapping(value = "/user/sys",method = RequestMethod.POST)
+    public List<Integer> selectUserRole(String uid){
+//        try{
+            List<Integer> list = userService.selectUserRole(uid);
             return list;
-        }catch (Exception e){
-            return null;
-        }
+//        }catch (Exception e){
+//            return null;
+//        }
     }
 
 
@@ -197,17 +200,17 @@ public class UserController {
             return 0;
         }
     }
-    public int updateUserJud(String uid,int JudId){
+    public int updateUserJud(String uid,int OJudId,int NJudId){
         try{
-            int num = userService.updateUserJud(uid, JudId);
+            int num = userService.updateUserJud(uid, OJudId,NJudId);
             return num;
         }catch (Exception e){
             return 0;
         }
     }
-    public  List<String> selectUserJud(String uid,int JudId){
+    public  List<Integer> selectUserJud(String uid){
         try{
-            List<String> list = userService.selectUserJud(uid, JudId);
+            List<Integer> list = userService.selectUserJud(uid);
             return list;
         }catch (Exception e){
             return null;
@@ -232,17 +235,17 @@ public class UserController {
             return 0;
         }
     }
-    public int updateUserDept(String uid,int DeptId){
+    public int updateUserDept(String uid,int ODeptId,int NDeptId){
         try{
-            int num = userService.updateUserDept(uid, DeptId);
+            int num = userService.updateUserDept(uid, ODeptId,NDeptId);
             return num;
         }catch (Exception e){
             return 0;
         }
     }
-    public  List<String> selectUserDept(String uid,int DeptId){
+    public  List<Integer> selectUserDept(String uid){
         try{
-            List<String> list = userService.selectUserDept(uid, DeptId);
+            List<Integer> list = userService.selectUserDept(uid);
             return list;
         }catch (Exception e){
             return null;

@@ -70,4 +70,8 @@ public class User {
         this.passWord = passWord;
         this.upwdb = upwdb;
     }
+
+    public User(){
+        super();
+    }
 }

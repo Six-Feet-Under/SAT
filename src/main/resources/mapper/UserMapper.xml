@@ -66,4 +66,31 @@
         </if>
         where id = #{id}
     </update>
+
+    
+
+    <insert id="insertUserRole" parameterType="java.util.Map" >
+        insert into
+        user_role (user_uid,role_id)
+        values (#{uid},#{roleId})
+    </insert>
+
+    <delete id="deleteUserRole" parameterType="java.util.Map" >
+        delete
+        from user_role
+        where user_uid = #{uid} and role_id = #{roleId}
+    </delete>
+
+    <update id="updateUserRole" parameterType="java.util.Map" >
+        update user_role
+        set
+            role_id = #{NroleId}
+        where user_uid = #{uid} and role_id =#{OroleId}
+    </update>
+
+    <select id="selectUserRole" resultType="java.lang.Integer" parameterType="java.lang.String">
+        select role_id
+        from user_role
+        where user_uid = #{uid}
+    </select>
 </mapper>

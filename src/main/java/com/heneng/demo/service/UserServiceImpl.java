@@ -56,13 +56,13 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public int updateUserRole(String uid,int RoleId) {
-        return userMapper.updateUserRole(uid, RoleId);
+    public int updateUserRole(String uid,int ORoleId,int NRoleId) {
+        return userMapper.updateUserRole(uid, ORoleId, NRoleId);
     }
 
     @Override
-    public List<String> selectUserRole(String uid,int RoleId) {
-        return userMapper.selectUserRole(uid, RoleId);
+    public List<Integer> selectUserRole(String uid) {
+        return userMapper.selectUserRole(uid);
     }
 
 
@@ -81,13 +81,13 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public int updateUserJud(String uid,int JudId) {
-        return userMapper.updateUserJud(uid, JudId);
+    public int updateUserJud(String uid,int OJudId,int NJudId) {
+        return userMapper.updateUserJud(uid, OJudId,NJudId);
     }
 
     @Override
-    public List<String> selectUserJud(String uid,int JudId) {
-        return userMapper.selectUserJud(uid, JudId);
+    public List<Integer> selectUserJud(String uid) {
+        return userMapper.selectUserJud(uid);
     }
 
 
@@ -105,13 +105,13 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public int updateUserDept(String uid,int DeptId) {
-        return userMapper.updateUserDept(uid, DeptId);
+    public int updateUserDept(String uid,int ODeptId,int NDeptId) {
+        return userMapper.updateUserDept(uid, ODeptId,NDeptId);
     }
 
     @Override
-    public List<String> selectUserDept(String uid,int DeptId) {
-        return userMapper.selectUserDeptc (uid, DeptId);
+    public List<Integer> selectUserDept(String uid) {
+        return userMapper.selectUserDeptc (uid);
     }
 
 
