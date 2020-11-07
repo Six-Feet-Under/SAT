@@ -93,4 +93,77 @@
         from user_role
         where user_uid = #{uid}
     </select>
+
+    <select id="selectUserRoleAll" resultType="java.util.HashMap" >
+        select *
+        from user_role
+    </select>
+
+
+
+
+    <insert id="insertUserJud" parameterType="java.util.Map" >
+        insert into
+        user_jud (user_uid,jud_id)
+        values (#{uid},#{judId})
+    </insert>
+
+    <delete id="deleteUserJud" parameterType="java.util.Map" >
+        delete
+        from user_jud
+        where user_uid = #{uid} and jud_id = #{judId}
+    </delete>
+
+    <update id="updateUserJud" parameterType="java.util.Map" >
+        update user_jud
+        set
+            jud_id = #{NjudId}
+        where user_uid = #{uid} and jud_id =#{OjudId}
+    </update>
+
+    <select id="selectUserJud" resultType="java.lang.Integer" parameterType="java.lang.String">
+        select jud_id
+        from user_jud
+        where user_uid = #{uid}
+    </select>
+
+    <select id="selectUserJudAll" resultType="java.util.HashMap" >
+        select *
+        from user_jud
+    </select>
+
+
+
+
+    <insert id="insertUserDept" parameterType="java.util.Map" >
+        insert into
+        user_dept (user_uid,dept_id)
+        values (#{uid},#{deptId})
+    </insert>
+
+    <delete id="deleteUserDept" parameterType="java.util.Map" >
+        delete
+        from user_dept
+        where user_uid = #{uid} and dept_id = #{deptId}
+    </delete>
+
+    <update id="updateUserDept" parameterType="java.util.Map" >
+        update user_dept
+        set
+            dept_id = #{NdeptId}
+        where user_uid = #{uid} and dept_id =#{OdeptId}
+    </update>
+
+    <select id="selectUserDept" resultType="java.lang.Integer" parameterType="java.lang.String">
+        select dept_id
+        from user_dept
+        where user_uid = #{uid}
+    </select>
+
+    <select id="selectUserDeptAll" resultType="java.util.HashMap" >
+        select *
+        from user_dept
+    </select>
+
+
 </mapper>

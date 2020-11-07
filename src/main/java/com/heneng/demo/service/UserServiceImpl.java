@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -43,6 +44,11 @@ public class UserServiceImpl implements UserService{
         return userMapper.selectUserById(id);
     }
 
+    @Override
+    public List<User> selectAll() {
+        //return null;
+        return userMapper.selectAll();
+    }
 
 
     @Override
@@ -65,9 +71,10 @@ public class UserServiceImpl implements UserService{
         return userMapper.selectUserRole(uid);
     }
 
-
-
-
+    @Override
+    public  List<Map> selectUserRoleAll() {
+        return userMapper.selectUserRoleAll();
+    }
 
 
     @Override
@@ -90,8 +97,10 @@ public class UserServiceImpl implements UserService{
         return userMapper.selectUserJud(uid);
     }
 
-
-
+    @Override
+    public List<Map> selectUserJudAll() {
+        return userMapper.selectUserJudAll();
+    }
 
 
     @Override
@@ -114,13 +123,11 @@ public class UserServiceImpl implements UserService{
         return userMapper.selectUserDeptc (uid);
     }
 
-
-
-
-
     @Override
-    public List<User> selectAll() {
-        //return null;
-       return userMapper.selectAll();
+    public List<Map> selectUserDeptAll() {
+        return userMapper.selectUserDeptAll();
     }
+
+
+
 }

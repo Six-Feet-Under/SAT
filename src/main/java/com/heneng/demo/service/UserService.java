@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface UserService {
@@ -33,6 +34,9 @@ public interface UserService {
 
      List<Integer> selectUserRole(String uid);
 
+     List<Map> selectUserRoleAll();
+
+
 
 
      int insertUserJud(String uid,int JudId);
@@ -42,6 +46,8 @@ public interface UserService {
      int updateUserJud(String uid,int OJudId,int NJudId);
 
      List<Integer> selectUserJud(String uid);
+
+     List<Map> selectUserJudAll();
 
 
 
@@ -53,4 +59,5 @@ public interface UserService {
 
      List<Integer> selectUserDept(String uid);
 
+     List<Map> selectUserDeptAll();
 }

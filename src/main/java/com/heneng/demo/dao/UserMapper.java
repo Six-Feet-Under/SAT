@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface UserMapper {
@@ -34,23 +35,31 @@ public interface UserMapper {
 
     List<Integer> selectUserRole(@Param("uid") String uid);
 
-
-
-    int insertUserJud(String uid, int judId);
-
-    int deleteUserJud(String uid, int judId);
-
-    int updateUserJud(String uid, int OjudId,int NjudId);
-
-    List<Integer> selectUserJud(String uid);
+    List<Map> selectUserRoleAll();
 
 
 
-    int insertUserDept(String uid, int deptId);
 
-    int deleteUserDept(String uid, int deptId);
+    int insertUserJud(@Param("uid")String uid, @Param("judId") int judId);
 
-    int updateUserDept(String uid, int OdeptId,int NdeptId);
+    int deleteUserJud(@Param("uid")String uid, @Param("judId")int judId);
 
-    List<Integer> selectUserDeptc(String uid);
+    int updateUserJud(@Param("uid")String uid, @Param("OjudId") int OjudId,@Param("NjudId")int NjudId);
+
+    List<Integer> selectUserJud(@Param("uid")String uid);
+
+    List<Map> selectUserJudAll();
+
+
+
+
+    int insertUserDept(@Param("uid")String uid, @Param("deptId") int deptId);
+
+    int deleteUserDept(@Param("uid")String uid, @Param("deptId")int deptId);
+
+    int updateUserDept(@Param("uid")String uid, @Param("OdeptId") int OdeptId,@Param("NdeptId") int NdeptId);
+
+    List<Integer> selectUserDeptc(@Param("uid")String uid);
+
+    List<Map> selectUserDeptAll();
 }

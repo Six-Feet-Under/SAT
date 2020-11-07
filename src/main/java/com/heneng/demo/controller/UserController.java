@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @Api(value = "用户接口信息", tags = {"用户接口信息"})
@@ -144,6 +145,8 @@ public class UserController {
 
 
 
+
+
     public int insertUserRole(String uid,int RoleId){
         try{
             int num = userService.insertUserRole(uid,RoleId);
@@ -171,15 +174,28 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/user/sys",method = RequestMethod.POST)
     public List<Integer> selectUserRole(String uid){
-//        try{
+       try{
             List<Integer> list = userService.selectUserRole(uid);
             return list;
-//        }catch (Exception e){
-//            return null;
-//        }
+        }catch (Exception e){
+            return null;
+        }
     }
+
+    @RequestMapping(value = "/user/sys",method = RequestMethod.POST)
+    public  List<Map> selectUserRoleAll(){
+        try{
+            List<Map> map = userService.selectUserRoleAll();
+            return map;
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+
+
+
 
 
 
@@ -192,6 +208,7 @@ public class UserController {
             return 0;
         }
     }
+
     public int deleteUserJud(String uid,int JudId){
         try{
             int num = userService.deleteUserJud(uid, JudId);
@@ -200,6 +217,7 @@ public class UserController {
             return 0;
         }
     }
+
     public int updateUserJud(String uid,int OJudId,int NJudId){
         try{
             int num = userService.updateUserJud(uid, OJudId,NJudId);
@@ -208,6 +226,7 @@ public class UserController {
             return 0;
         }
     }
+
     public  List<Integer> selectUserJud(String uid){
         try{
             List<Integer> list = userService.selectUserJud(uid);
@@ -216,6 +235,16 @@ public class UserController {
             return null;
         }
     }
+
+    public List<Map> selectUserJudAll(){
+        try{
+            List<Map> map = userService.selectUserJudAll();
+            return map;
+        }catch (Exception e){
+            return null;
+        }
+    }
+
 
 
 
@@ -227,6 +256,7 @@ public class UserController {
             return 0;
         }
     }
+
     public int deleteUserDept(String uid,int DeptId){
         try{
             int num = userService.deleteUserDept(uid, DeptId);
@@ -235,6 +265,7 @@ public class UserController {
             return 0;
         }
     }
+
     public int updateUserDept(String uid,int ODeptId,int NDeptId){
         try{
             int num = userService.updateUserDept(uid, ODeptId,NDeptId);
@@ -243,10 +274,20 @@ public class UserController {
             return 0;
         }
     }
+
     public  List<Integer> selectUserDept(String uid){
         try{
             List<Integer> list = userService.selectUserDept(uid);
             return list;
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+    public List<Map> selectUserDeptAll(){
+        try{
+            List<Map> map = userService.selectUserDeptAll();
+            return map;
         }catch (Exception e){
             return null;
         }
