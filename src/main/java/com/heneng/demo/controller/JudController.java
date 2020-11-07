@@ -25,7 +25,7 @@ public class JudController {
     public JudService judService;
 
     @ApiOperation(value="增加权限信息接口", notes="增加权限信息信息")
-    @RequestMapping(value = "/jud/insertLog", method = RequestMethod.POST)
+    @RequestMapping(value = "/jud/insertJud", method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "strs", value = "private String id;  //自增主键\n" +
                     "    private String  judname;  //权限的名称", required = true,
@@ -46,7 +46,7 @@ public class JudController {
             @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
                     dataType = "string", paramType = "int")
     })
-    public int deleteById(int id) {
+    public int deleteById(Integer id) {
         try{
             int num = judService.deleteById(id);
             return num;
@@ -71,14 +71,14 @@ public class JudController {
     }
 
     @ApiOperation(value="查询权限信息接口", notes="查询权限信息")
-    @RequestMapping(value = "/jud/selectJudByUid", method = RequestMethod.POST)
+    @RequestMapping(value = "/jud/selectJudById", method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "strs", value = "权限列表", required = true,
                     dataType = "Jud", paramType = "int")
     })
-    public Jud selectJudByUid(int id) {
+    public Jud selectJudById(Integer id) {
         try{
-            Jud jud =  judService.selectJudByUid(id);
+            Jud jud =  judService.selectJudById(id);
             return jud;
         }catch (Exception e){
             return null;

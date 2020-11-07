@@ -12,11 +12,11 @@ public interface RoleService {
     int insertRole(Role role);
 
 
-    int deleteRole(int id);
+    int deleteRole(Integer id);
 
     int updateRole(Role role);
 
     List<Jud> selectAll();
 
-    Role seleteById(int id);
+    Role seleteById(Integer id);
 }

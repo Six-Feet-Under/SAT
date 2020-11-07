@@ -9,11 +9,11 @@ import java.util.List;
 public interface JudService {
     int insertJud(Jud jud);
 
-    int deleteById(int id);
+    int deleteById(Integer id);
 
     List<Jud> selectAll();
 
-    Jud selectJudByUid(int  id);
+    Jud selectJudById(Integer  id);
 
     int updateJud(Jud jud);
 }

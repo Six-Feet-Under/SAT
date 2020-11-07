@@ -19,7 +19,7 @@ public class JudServiceImpl implements JudService{
     }
 
     @Override
-    public int deleteById(int id) {
+    public int deleteById(Integer id) {
         return judMapper.deleteById(id);
     }
 
@@ -29,7 +29,7 @@ public class JudServiceImpl implements JudService{
     }
 
     @Override
-    public Jud selectJudByUid(int id) {
+    public Jud selectJudById(Integer id) {
         return judMapper.selectJudById(id);
     }
 
