@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @Api(value = "用户接口信息", tags = {"用户接口信息"})
@@ -27,7 +28,7 @@ public class UserController {
             @ApiImplicitParam(name = "passWord",value = "密码",required = true,dataType = "String",paramType = "String"),
     })
     public User login(String account,String passWord){
-       try {
+        try {
             User user = userService.login(account,passWord);
             return user;
         }catch (Exception e){
@@ -119,8 +120,8 @@ public class UserController {
     })
     public int updateUser(User user){
 //        try {
-            int num = userService.updateUser(user);
-            return  num;
+        int num = userService.updateUser(user);
+        return  num;
 //        }catch (Exception e){
 //            return 0;
 //        }
@@ -153,6 +154,10 @@ public class UserController {
             return null;
         }
     }
+
+
+
+
 
 
     @ApiOperation(value = "新增用户角色接口",notes = "新增用户角色")
@@ -210,13 +215,29 @@ public class UserController {
             @ApiImplicitParam(name = "uid",value = "用户id",required = true,dataType = "List",paramType = "String")
     })
     public List<Integer> selectUserRole(String uid){
-//        try{
-            List<Integer> list = userService.selectUserRole(uid);
-            return list;
-//        }catch (Exception e){
-//            return null;
-//        }
+        try{
+        List<Integer> list = userService.selectUserRole(uid);
+        return list;
+        }catch (Exception e){
+            return null;
+        }
     }
+
+    @ApiOperation(value = "查找所有用户角色接口",notes = "查找所有用户角色")
+    @RequestMapping(value = "/user/selectUserRoleAll",method = RequestMethod.POST)
+    @ApiImplicitParam(dataType = "list<map>")
+    public List<Map> selectUserRoleAll(){
+        try{
+            List<Map> map = userService.selectUserRoleAll();
+            return map;
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+
+
+
 
 
 
@@ -280,6 +301,23 @@ public class UserController {
         }
     }
 
+    @ApiOperation(value = "查找所有用户权限接口",notes = "查找所有用户权限")
+    @RequestMapping(value = "/user/selectUserJudAll",method = RequestMethod.POST)
+    @ApiImplicitParam(dataType = "list<map>")
+    public List<Map> selectUserJudAll(){
+        try{
+            List<Map> map = userService.selectUserJudAll();
+            return map;
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+
+
+
+
+
 
     @ApiOperation(value = "新增用户部门接口",notes = "新增用户部门")
     @RequestMapping(value = "/user/insertUserDept",method = RequestMethod.POST)
@@ -342,4 +380,17 @@ public class UserController {
             return null;
         }
     }
+
+    @ApiOperation(value = "查找所有用户部门接口",notes = "查找所有用户部门")
+    @RequestMapping(value = "/user/selectUserDeptAll",method = RequestMethod.POST)
+    @ApiImplicitParam(dataType = "list<map>")
+    public List<Map> selectUserDeptAll(){
+        try{
+            List<Map> map = userService.selectUserDeptAll();
+            return map;
+        }catch (Exception e){
+            return null;
+        }
+    }
+
 }
