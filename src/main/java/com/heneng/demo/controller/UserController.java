@@ -330,7 +330,7 @@ public class UserController {
     }
 
     @ApiOperation(value = "查找用户部门接口",notes = "查找用户部门")
-    @RequestMapping(value = "/user/updateUserDept",method = RequestMethod.POST)
+    @RequestMapping(value = "/user/selectUserDept",method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "uid",value = "用户id",required = true,dataType = "List",paramType = "String")
     })

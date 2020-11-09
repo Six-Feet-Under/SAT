@@ -39,7 +39,7 @@ public class Swagger {
                 .apiInfo(apiInfo)
                 .globalOperationParameters(pars)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.llf.springboot.controller")) //以扫描包的方式
+                .apis(RequestHandlerSelectors.basePackage("com.heneng.demo.controller")) //以扫描包的方式
                 .paths(PathSelectors.any())
                 .build();
     }
